@@ -1,0 +1,61 @@
+import { Form, Input, Modal } from 'antd';
+import { useState } from 'react';
+
+const ResetPasswordModal = (props) => {
+    const { showModal, hideModal } = props
+    const { TextArea } = Input
+    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [form] = Form.useForm()
+
+    const handleSubmit = (res) => {
+        setConfirmLoading(true);
+        setTimeout(() => {
+            hideModal(false);
+            setConfirmLoading(false);
+        }, 2000);
+    };
+
+    const handleCancel = () => {
+        hideModal(false);
+    };
+
+    const handleFail = () => {
+        setConfirmLoading(false)
+    }
+
+    return (
+        <>
+            <Modal
+                title="Reset Password"
+                visible={showModal}
+                onOk={form.submit}
+                confirmLoading={confirmLoading}
+                onCancel={handleCancel}
+            >
+                <Form
+                    form={form}
+                    name="reset_password"
+                    autoComplete="off"
+                    onFinish={handleSubmit}
+                    onFinishFailed={handleFail}
+                    layout={'vertical'}
+                >
+                    <Form.Item
+                        name="remarks"
+                        label="Remarks"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please enter remarks!',
+                            },
+                        ]}
+                    >
+                        <TextArea />
+                    </Form.Item>
+                </Form>
+            </Modal>
+        </>
+    );
+};
+
+export default ResetPasswordModal;

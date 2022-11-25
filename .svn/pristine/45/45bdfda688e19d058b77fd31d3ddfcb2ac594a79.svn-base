@@ -1,0 +1,162 @@
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
+import React from 'react';
+import { MdEmail, MdWork, MdEdit } from 'react-icons/md'
+import { FaAddressCard } from 'react-icons/fa'
+import styled from 'styled-components';
+
+// const profileImage = {
+
+//   position: 'absolute',
+//   top: '80px',
+//   left: '600px',
+//   border: '8px solid rgb(255 255 255)',
+//   padding: '10px'
+
+
+// }
+// const profileInformation = {
+//   display: 'flex',
+//   flexDirection: 'column',
+//   marginLeft: 'auto',
+//   marginRight: 'auto',
+//   width: '40%',
+//   marginTop: '90px',
+//   fontSize: '25px',
+//   padding: '50px 162px'
+// }
+// const editIcon = {
+
+//   border: '3px solid black',
+//   padding: '10px',
+//   fontSize: '32px',
+//   background: 'skyblue',
+//   color: 'black',
+//   padding: '2px',
+//   borderRadius: '10%',
+//   float: 'right',
+//   marginBottom: '20px'
+// }
+
+// // const profileContainer = {
+// //   width: '100%',
+// //   background: 'rgb(120,201,250)',
+// //   background: 'linear-gradient(90deg, rgba(120,201,250,1) 38%,rgb(202 200 231) 100%)',
+// //   height: '250px'
+// // }
+// const mainContainer = {
+//   display: 'flex',
+//   justifyContent: 'center',
+//   width: '100%',
+//   flexDirection: 'column'
+// }
+
+// const spanStyling = {
+//   fontSize: '16px',
+//   fontWeight: '600',
+//   letterSpacing: '1.5px',
+//   marginBottom: '4px'
+// }
+
+// const generalIcons = {
+//   fontSize: '25px',
+//   marginRight: '9px',
+//   marginTop: '2px'
+// }
+
+// const buttonStyle = {
+//   width: '30%',
+//   fontSize: '15px',
+//   backgroundColor: '#4f81ff',
+//   color: 'white',
+//   fontWeight: '600',
+//   borderRadius: '200px',
+//   marginLeft: '200px',
+//   marginBottom: '50px'
+// }
+
+
+const UserProfile = () => {
+  return (
+    <div className='contentContainer'>
+      <MainContainer>
+        <div className='profileContainer'>
+          <Avatar size={180} className='profileImage' icon={<UserOutlined />} />
+        </div>
+        <div className="profileInformation">
+          {/* <a><TbEdit className='editIcon' /></a> */}
+          <button className='buttonStyle'><MdEdit /> Edit</button>
+          <span className='spanStyling'><h2>Prabal Thulung Rai</h2></span>
+          <span className='spanStyling'><MdEmail className='generalIcons' /> Prabalrai7@gmail.com</span>
+          <span className='spanStyling'><FaAddressCard className='generalIcons' />Old-Baneshwor</span>
+          <span className='spanStyling'><MdWork className='generalIcons' /> Student</span>
+        </div>
+        {/* <div style={profileInformation}> */}
+        {/* <a><TbEdit style={editIcon}/></a> */}
+        {/* <button style={buttonStyle}><MdEdit /> Edit</button> */}
+        {/* <span style={spanStyling}><h2>Prabal Thulung Rai</h2></span> */}
+        {/* <span style={spanStyling}><MdEmail style={generalIcons} /> Prabalrai7@gmail.com</span> */}
+        {/* <span style={spanStyling}><FaAddressCard style={generalIcons} />Old-Baneshwor</span> */}
+        {/* <span style={spanStyling}><MdWork style={generalIcons} /> Student</span> */}
+        {/* </div> */}
+      </MainContainer>
+
+    </div>
+  )
+}
+
+
+export default UserProfile;
+
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: '100%';
+  flex-direction: column;
+  /* background-color: red; */
+
+  .profileContainer{
+    display: block;
+    width: 100%;
+    height: 100px;
+    background: 'rgb(120,201,250)';
+    background: linear-gradient(90deg, rgba(120,201,250,1) 38%,rgb(202 200 231) 100%);
+    height: 160px;
+    position: relative;
+  }
+
+  .profileImage{
+      position: absolute;
+      top: 32%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 8px solid rgb(255 255 255);
+      padding: 10px ;
+  }
+  .profileInformation{
+    /* display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto; */
+    /* width: 4%;
+    margin-top: 90px;
+    font-size: 25px;
+    
+    padding: '50px162px; */
+    width: 50%;
+
+    border: 1px solid gray;
+    height: 300px;
+    margin-top: 100px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  .spanStyling{
+   font-size: 16px;
+   font-weight: 600;
+   letter-spacing: 1.5px;
+   margin-bottom: 4px;
+ }
+`
